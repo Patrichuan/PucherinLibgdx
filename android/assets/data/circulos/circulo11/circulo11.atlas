@@ -1,0 +1,144 @@
+
+circulo11.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0000
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo112.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0001
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo113.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0002
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo114.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0003
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo115.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0004
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo116.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0005
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo117.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0006
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo118.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0007
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo119.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0008
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo1110.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0009
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo1111.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0010
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo1112.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0011
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1

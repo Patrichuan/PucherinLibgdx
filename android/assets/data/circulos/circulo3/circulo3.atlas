@@ -1,0 +1,48 @@
+
+circulo3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0000
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo32.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0001
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo33.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0002
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
+
+circulo34.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+0003
+  rotate: false
+  xy: 1, 1
+  size: 901, 914
+  orig: 901, 914
+  offset: 0, 0
+  index: -1
