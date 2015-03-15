@@ -29,12 +29,13 @@ public class Circulo extends Sprite {
 	public void UpdateTexture() {	
 		if (NumDeCasillas == 7) {
 			if (Completado) { // Esto quiere decir que acabo de sacar un 12
+				
+				// Si no modofinish deberia ser 1 el NumDeFichas <-------------------------------
 				NumDeFichas = 0;
 				Multiplicador = 0;
 			} else {
 				if (NumDeFichas<4){
-					NumDeFichas++;	
-					
+					NumDeFichas++;						
 				} else {
 					NumDeFichas = 1;
 					Multiplicador++; // Veces que se ha completado el 7 con 4 fichas					

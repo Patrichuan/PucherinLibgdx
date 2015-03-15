@@ -1,6 +1,5 @@
 package pucherin.thegame.com;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -15,11 +14,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 public class PantallaTablero extends Pantalla {
 
 	//TODO 
-	// - Cambiar de pantalla cuando se acaba la partida
 	// - Sonido
-	// - Animaciones
-	// - Pantalla de Inicio
 	// - Pantalla de Puntuaciones
+	// - Animaciones
 	
 	private Sprite Tablero;
 	private Circulo Circulo2, Circulo3, Circulo4, Circulo5, Circulo11;
@@ -272,7 +269,6 @@ public class PantallaTablero extends Pantalla {
 	}
 	
 	
-	
 	// Actualizacion de Textures de los Sprites
 	public void ActualizarDados () {			
 		Dado1.setSize(150, 150);
@@ -282,7 +278,8 @@ public class PantallaTablero extends Pantalla {
 		Dado2.setPosition(SCREEN_WIDTH/3 - 150, SCREEN_HEIGHT/2 - 40);	
 	}
 	
-	public void ActualizarCirculo (int NumDeCirculo) {
+	public void ActualizarCirculo (int NumDeCirculo) {		
+		
 		if (!ModoFinish) {
 			switch (NumDeCirculo) {
 			case 2:
@@ -315,7 +312,6 @@ public class PantallaTablero extends Pantalla {
 				Circulo7.setSize(CIRCLE_WIDTH + 150, CIRCLE_HEIGHT + 150);
 				Circulo7.setPosition(SCREEN_WIDTH / 2 - CIRCLE_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - CIRCLE_HEIGHT / 2);
 				
-				// ACTUALIZAR AQUI EL LABEL PARA SABER CUANTAS FICHAS TIENE EL PUCHERO ACTUALMENTE
 				Multiplicador_lbl.setText("+" + Circulo7.getMultiplicador()*4);
 				
 				break;
@@ -410,10 +406,7 @@ public class PantallaTablero extends Pantalla {
 				Circulo7.setCompletado(true);
 				Circulo7.UpdateTexture();
 				Circulo7.setSize(CIRCLE_WIDTH + 150, CIRCLE_HEIGHT + 150);
-				Circulo7.setPosition(SCREEN_WIDTH / 2 - CIRCLE_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - CIRCLE_HEIGHT / 2);
-				
-				// ACTUALIZAR AQUI EL LABEL PARA SABER CUANTAS FICHAS TIENE EL PUCHERO ACTUALMENTE
-				
+				Circulo7.setPosition(SCREEN_WIDTH / 2 - CIRCLE_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - CIRCLE_HEIGHT / 2);	
 				break;
 			case 8:
 				CantidadGanada = (Circulo8.getNumDeFichas());
@@ -452,47 +445,33 @@ public class PantallaTablero extends Pantalla {
 				Circulo11.setPosition(SCREEN_WIDTH - TamañoDeMargenes - CIRCLE_WIDTH, 200);		
 				break;		
 			case 12:
-				CantidadGanada = (Circulo7.getNumDeFichas() + (Circulo7.getMultiplicador()*4)) + (Circulo7.getMultiplicador()*4) + (Circulo2.getNumDeFichas()) +
-						(Circulo3.getNumDeFichas()) + (Circulo4.getNumDeFichas()) + (Circulo5.getNumDeFichas()) + (Circulo6.getNumDeFichas()) +
-						(Circulo7.getNumDeFichas()) + (Circulo8.getNumDeFichas()) + (Circulo9.getNumDeFichas()) + (Circulo10.getNumDeFichas()) +
-						(Circulo11.getNumDeFichas()) - 1;
-				Multiplicador_lbl.setText("+0");
+				// Como hay 50 fichas...las que queden en la mesa han de ser 50 menos todas las fichas de todos los jugadores
+				CantidadGanada = (50-(Puntuacion[1]+Puntuacion[2]+Puntuacion[3]+Puntuacion[4]));
 				System.out.println("Me acabo de llevar TODO:  "+CantidadGanada);
-				
-				AsignarYPosicionarCirculos (); // Esto es una salvajada, buscar forma de no usarlo
-				
-				Circulo2.setCompletado(true);
-				Circulo3.setCompletado(true);
-				Circulo4.setCompletado(true);
-				Circulo5.setCompletado(true);
-				Circulo6.setCompletado(true);
-				Circulo7.setCompletado(true);
-				Circulo8.setCompletado(true);
-				Circulo9.setCompletado(true);
-				Circulo10.setCompletado(true);
-				Circulo11.setCompletado(true);				
-				
-				// Y cambio de pantalla
 				
 				break;
 			}
 			
-				Puntuacion[TurnoDe] += CantidadGanada;
+			Puntuacion[TurnoDe] += CantidadGanada;
+		
+			switch (TurnoDe) {
+			case 1:
+				Puntuacion1_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
+				break;
+			case 2:
+				Puntuacion2_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
+				break;
+			case 3:
+				Puntuacion3_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
+				break;
+			case 4:
+				Puntuacion4_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
+				break;
+			}	
 			
-				switch (TurnoDe) {
-				case 1:
-					Puntuacion1_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
-					break;
-				case 2:
-					Puntuacion2_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
-					break;
-				case 3:
-					Puntuacion3_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
-					break;
-				case 4:
-					Puntuacion4_lbl.setText(EstilizarPuntuacion(Puntuacion[TurnoDe]));
-					break;
-				}				
+			ComprobarFinDeJuego ();
+			
+			
 		}		
 	}
 		
@@ -636,6 +615,21 @@ public class PantallaTablero extends Pantalla {
 		Puntuacion3_lbl.setStyle(PassiveTurnStyle);
 		NombrePlayer4.setStyle(PassiveTurnStyle);		
 		Puntuacion4_lbl.setStyle(PassiveTurnStyle);
+	}
+	
+	// Si los 4 marcadores suman 50 es que ya se ha acabado el juego
+	public void ComprobarFinDeJuego () {
+		int TotalFichasGanadas = 0;
+		
+		for (int i = 1; i<=4; i++) {
+			TotalFichasGanadas += Puntuacion[i];
+		}
+		
+		// Sí 
+		if (TotalFichasGanadas >= 50) {
+			game.setScreen(new PantallaFinDeJuego(game, Puntuacion));	
+			dispose();
+		}
 	}
 	
 	

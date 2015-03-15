@@ -7,16 +7,12 @@ public class PucherinGame extends Game {
 	
 	public SpriteBatch batch;
 	
-	public Pantalla Tablero;
-	public Pantalla Menu;
-	public Pantalla Records;
-	
+	public Pantalla Menu;	
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
 		
-		Tablero = new PantallaTablero (this);
+		batch = new SpriteBatch();		
 		Menu = new PantallaMenu (this);
 		
 		setScreen(Menu);
